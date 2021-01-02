@@ -8,6 +8,8 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>springboot-01-helloworld</module>
+    <module>springboot-02</module>
+    <module>springboot-05-web-01</module>
   </modules>
 
   <!-- 统一管理jar包版本 -->

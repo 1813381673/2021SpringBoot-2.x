@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-01-helloworld</artifactId>
+    <artifactId>springboot-05-web-01</artifactId>
 
     <dependencies>
         <dependency>
@@ -26,6 +26,5 @@
             <artifactId>lombok</artifactId>
         </dependency>
     </dependencies>
-
 
 </project>
