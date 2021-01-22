@@ -1,6 +1,7 @@
 package com.xsj.springboot.controller;
 
 
+import com.xsj.springboot.entity.Person;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.Cookie;
@@ -14,6 +15,11 @@ import java.util.Map;
  */
 @RestController
 public class ParamterTestController {
+
+    @PostMapping("/saveuser")
+    public Person saveUser(Person person){
+        return person;
+    }
 
     @GetMapping("/car/{id}/owner/{username}")
     public Map<String, Object> getCar(@PathVariable("id") Integer id,

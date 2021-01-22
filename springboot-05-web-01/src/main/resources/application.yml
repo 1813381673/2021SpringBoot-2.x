@@ -8,3 +8,35 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
+    contentnegotiation:
+      favor-parameter: true #开启参数方式的内容协商
+  datasource:
+    url: jdbc:mysql://localhost:3306/sb2_account?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      filters: stat,wall  #前面是web监控，后面是防火墙
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: 123456
+        reset-enable: false
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '.js,*.gif*,*.jpg,*.png,*.css,*.ico,/druid/*'
+      filter:
+        stat:
+          slow-sql-millis: 1000
+          log-slow-sql: true
+          enabled: true
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+      aop-patterns: com.xsj.springboot.*
+
+
+
+

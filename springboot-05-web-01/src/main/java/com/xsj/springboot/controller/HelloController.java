@@ -1,6 +1,9 @@
 package com.xsj.springboot.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class HelloController {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+    @GetMapping("/sql")
+    public String queryFromDB() {
+        Long aLong = jdbcTemplate.queryForObject("select count(1) from user", Long.class);
+        return aLong.toString();
+    }
 
     @RequestMapping("/1.jpg")
     public String hello(){
